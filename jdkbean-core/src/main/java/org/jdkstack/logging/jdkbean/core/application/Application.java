@@ -1,4 +1,6 @@
-package org.jdkstack.logging.jdkbean.core;
+package org.jdkstack.logging.jdkbean.core.application;
+
+import org.jdkstack.jdkbean.api.context.Context;
 
 /**
  * 启动类.

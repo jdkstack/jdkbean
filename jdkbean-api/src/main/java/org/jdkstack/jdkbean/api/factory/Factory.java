@@ -1,5 +1,7 @@
-package org.jdkstack.logging.jdkbean.core;
+package org.jdkstack.jdkbean.api.factory;
 
+
+import org.jdkstack.jdkbean.api.bean.Bean;
 
 public interface Factory {
 

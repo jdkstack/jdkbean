@@ -1,4 +1,6 @@
-package org.jdkstack.logging.jdkbean.core;
+package org.jdkstack.jdkbean.api.context;
+
+import org.jdkstack.jdkbean.api.bean.Bean;
 
 public interface Context {
 

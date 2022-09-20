@@ -1,6 +1,13 @@
-package org.jdkstack.logging.jdkbean.core;
+package org.jdkstack.logging.jdkbean.core.context;
 
 import java.lang.reflect.Executable;
+import org.jdkstack.jdkbean.api.bean.Bean;
+import org.jdkstack.jdkbean.api.context.Context;
+import org.jdkstack.jdkbean.api.factory.Factory;
+import org.jdkstack.logging.jdkbean.core.annotation.Component;
+import org.jdkstack.logging.jdkbean.core.annotation.ComponentScan;
+import org.jdkstack.logging.jdkbean.core.annotation.ConstructorResource;
+import org.jdkstack.logging.jdkbean.core.bean.BeanService;
 import org.jdkstack.logging.jdkbean.core.factory.BeanFactory;
 
 public class ApplicationContext implements Context {
@@ -65,7 +72,7 @@ public class ApplicationContext implements Context {
             object = classObj.getConstructor().newInstance();
           }
         }
-        final Bean bean = new Bean();
+        final Bean bean = new BeanService();
         bean.setClassObj(classObj);
         bean.setName(beanName);
         if (singleton) {

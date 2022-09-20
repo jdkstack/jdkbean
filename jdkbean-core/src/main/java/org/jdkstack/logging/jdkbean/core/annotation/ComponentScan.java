@@ -1,4 +1,4 @@
-package org.jdkstack.logging.jdkbean.core;
+package org.jdkstack.logging.jdkbean.core.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,9 +7,11 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Component {
+public @interface ComponentScan {
 
-  String value() default "";
+  String[] value() default {};
 
-  boolean singleton() default false;
+  Filter[] includeFilters() default {};
+
+  Filter[] excludeFilters() default {};
 }
