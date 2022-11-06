@@ -1,6 +1,7 @@
 package org.jdkstack.logging.jdkbean.core.context;
 
 import java.lang.reflect.Executable;
+import java.util.Locale;
 import org.jdkstack.jdkbean.api.bean.Bean;
 import org.jdkstack.jdkbean.api.context.Context;
 import org.jdkstack.jdkbean.api.factory.Factory;
@@ -40,7 +41,14 @@ public class ApplicationContext implements Context {
       // 是单例吗?
       final boolean singleton = component.singleton();
       //
-      final String beanName = component.value();
+      String beanName = component.value();
+      if ("".equals(beanName)) {
+        String simpleName = classObj.getSimpleName();
+        String substring1 = simpleName.substring(0, 1);
+        String s = substring1.toLowerCase(Locale.getDefault());
+        String substring2 = simpleName.substring(1);
+        beanName = s + substring2;
+      }
       // 构造函数注入.
       final Executable[] constructors = classObj.getConstructors();
       for (Executable constructor : constructors) {

@@ -9,7 +9,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Component {
 
+  /** . */
   String value() default "";
 
-  boolean singleton() default false;
+  /** 默认单例 */
+  boolean singleton() default true;
 }
